@@ -5,14 +5,20 @@ class ApiError extends Error {
         this.status = status;
     }
 }
-async function searchJobs(query) {
+async function searchJobs(search) {
     if (!process.env.RAPIDAPI_KEY) {
         throw new ApiError('The server has no Api key set up.', 500);
 
     }
-    const url = `https://${API_HOST}/search-v2?query=${encodeURIComponent(query)}&page=1&num_pages=1`;
-
-    let response;
+const params = new URLSearchParams({
+    query: search.query,
+    country: search.country,
+    date_posted: search.datePosted,
+});
+if (search.remote) params.set('work_from_home','true');
+if(search.types) params.set('employment_types', search.types);
+const url =`https://${API_HOST}/search-v2?${params}`;
+    let response
     try {
         response = await fetch(url, {
             headers: {

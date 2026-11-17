@@ -1,13 +1,63 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Job Search</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <h1>My search app is running </h1>
+    <header>
+        <h1>Job Search </h1>
+        <p>Find jobs from LinkedIn, Indeed, Glassdoor and more in one place.</p>
+    </header>
+    <main>
+
+        <form id="search-form">
+            <label for="search-input">Job title or keyword</label>
+            <input id="search-input" type="text" placeholder="e.g. software engineer">
+            
+            <select id = "country">
+                <option value ="us">United States</option>
+                <option value="gb">United Kingdom</option>
+                <option value="rw">Rwanda</option>
+                <option value="ke">Kenya</option>
+                <option value="ng">Nigeria</option>
+                <option value="za">South Africa</option>
+            </select>
+
+            <select id="date-posted">
+                <option value="all">Any time</option>
+                <option value="today">Today</option>
+                <option value="3days">Last 3 days</option>
+                <option value="week">This week</option>
+                <option value="month">This month</option>
+            </select>
+        <label><input type="checkbox" id="remote"> Remote only</label>
+
+            
+
+            <fieldset>
+                <legend>Job type</legend>
+                <label><input type="checkbox" name="types" value="FULLTIME">Full-Time</label>
+                <label><input type="checkbox" name="types" value="PARTTIME">Part-time</label>
+                <label><input type="checkbox" name="types" value="CONTRACTOR"> Contract</label>
+                <label><input type="checkbox" name="types" value="INTERN">Internship</label>
+            </fieldset>
+            <button type="submit">Search</button>
+
+        </form>
+        <p id="status"></p>
+        <ul id="job-list"></ul>
+    </main>
+    <footer>
+        <p>Job data from the JSearch API by OpenWeb Ninja on RapidAPI.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
 </body>
 
 </html>

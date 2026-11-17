@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const { searchJobs } = require('./src/jobsApi');
+const { checkSearch } = require('./src/validate');
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(express.static('public'));
@@ -10,13 +11,13 @@ app.get('/api/health', (req, res) => {
 });
 
 app.get('/api/jobs', async (req, res) => {
-    const query = (req.query.q || '' ).trim();
-    if (query.length < 2) {
-        return res.status(400).json({ error:'Please type at least 2 characters.'});
-    }
+    const search = checkSearch(req.query);
+    if (search.error) {
+        return res.status(400).json({ error: search.error});
+    } 
 
     try {
-        const jobs = await searchJobs(query);
+        const jobs = await searchJobs(search);
         res.json(jobs);
     } catch (err) {
         console.error('Search failed:', err.message);
