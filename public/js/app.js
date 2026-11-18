@@ -60,7 +60,7 @@ const data = await response.json();
             showStatus('No jobs found, Try a different job title.');
             return;
         }
-        showStatus(`Found ${jobs.length} jobs.`);
+        showStatus(summanryText(jobs));
 currentJobs = jobs;
 showJobs(sortJobs(jobs));
     } catch (err) {
@@ -94,8 +94,10 @@ function showStatus(message, isError = false) {
 
         const salary = document.createElement('p');
         salary.textContent = formatSalary(job);
+        const posted = document.createElement('p');
+        posted.textContent = formatPosted(job.job_posted_at_datetime_utc);
 
-        item.append(title, company, location, salary);
+        item.append(title, company, location, salary, posted);
 
         if (job.job_apply_link) {
             const link = document.createElement('a');
@@ -123,3 +125,16 @@ function formatSalary(job) {
 sortSelect.addEventListener('change', () =>  {
     showJobs(sortJobs(currentJobs));
 });
+function formatPostegitd(dateText) {
+    if (!dateText) return 'Date not listed';
+    const days = Math.floor((Date.now() - new Date (dateText)) / 86400000 );
+    if (days <= 0) return '🆕 Posted today';
+    if (days === 1) return 'Posted yesterday';
+    if (days < 30) return `Posted ${days} days ago`;
+    return `Posted ${new Date(dateText).toLocaleDateString()}`;
+}
+function summaryText(jobs){
+    const remote = jobs.filter((job) => job.job_is_remote).length;
+    const withSalary = jobs.filter((job) => job.job_min_salary || job.job_max_salary).length;
+    return `Found ${jobs.length} jobs . ${remote} remote . ${withSalary} with Salary`;
+}
