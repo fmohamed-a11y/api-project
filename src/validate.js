@@ -1,5 +1,5 @@
 const   DATED = [ 'all', 'today','3days','week','month'];
-const TYPES = ['FULLTIME', 'PARIME','CONTRACTOR','INTERN'];
+const TYPES = ['FULLTIME', 'PARTTIME','CONTRACTOR','INTERN'];
 
 function checkSearch (q) {
     const query = (q.q || '').trim();

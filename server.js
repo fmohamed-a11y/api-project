@@ -4,12 +4,25 @@ const { searchJobs } = require('./src/jobsApi');
 const { checkSearch } = require('./src/validate');
 const app = express();
 const PORT = process.env.PORT || 3000;
+const { getRates } = require ('./src/currencyApi');
 app.use(express.static('public'));
+app.get('/api/rates', async (req, res) => {
+    try {
+        res.json({rates: await getRates ()});
+
+    } catch (err){
+        console.error ('Rates failed:', err.message);
+        res.status(502).json({ error: 'Currency Rates are unvailable right now'});
+    }
+});
+
+
+
+
 
 app.get('/api/health', (req, res) => {
     res.json({ status: 'ok' });
 });
-
 app.get('/api/jobs', async (req, res) => {
     const search = checkSearch(req.query);
     if (search.error) {
