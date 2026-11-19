@@ -11,8 +11,8 @@
 
 <body>
     <header>
-        <h1>Job Search </h1>
-        <p>Find jobs from LinkedIn, Indeed, Glassdoor and more in one place.</p>
+        <h1>JobPilot </h1>
+        <p><i>One flight across LinkedIn, Indeed, Glassdoor and more, straight to your dream job.</i></p>
     </header>
     <main>
 
@@ -51,16 +51,48 @@
 
         </form>
         <p id="status"></p>
-        <label for="Sort by"></label>
+        <label for="sort">Sort by</label>
         <select id="sort">
             <option value="relevance">Best match</option>
             <option value="newest">Newest first</option>
             <option value="salary">Highest salary</option>
             <option value="company">Company A-Z</option>
         </select>
+<label for ="currency">Show salary in</label>
+<select id="currency">
+    <option value="USD">US dollar (USD)</option>
+    <option value="RWF">Rwandan franc (RWF)</option>
+    <option value="KES">Kenyan shilling(KES)</option>
+    <option value="NGN">Nigerian naira (NGN)</option>
+    <option value="ZAR">South African rand (ZAR)</option>
+    <option value="GBP">British pound (GBP)</option>
+    <option value="EUR">Euro (EUR)</option>
+</select>
+
+
+
         <ul id="job-list"></ul>
+
+
+<section id="tracker">
+
+    <h2>My applications</h2>
+    <label for="status-filter">Show</label>
+    <select id="status-filter">
+        <option value="All">ALL</option>
+        <option value="Saved">Saved</option>
+        <option value="Applied">Applied</option>
+        <option value="Interview">Interview</option>
+        <option value="Offer">Offer</option>
+        <option value="Rejected">Rejected</option>
+
+    </select>
+    <ul id="tracker-list"></ul>
+</section>
+
     </main>
     <footer>
+        <P><a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer" >Rates by Exchange Rate API </a></P>
         <p>Job data from the JSearch API by OpenWeb Ninja on RapidAPI.</p>
     </footer>
 
