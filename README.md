@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/banner.png" alt="JobPilot banner" width="100%">
+    <img src="docs/banner.svg" alt="JobPilot banner" width="100%">
 </p>
 
 # JobPilot ✈️

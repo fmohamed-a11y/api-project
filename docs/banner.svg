@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1280" height="360" rx="28" fill="#3B2A5C"/>
+  <rect x="24" y="24" width="1232" height="312" rx="22" fill="#4A3670" stroke="#6B54A3"/>
+  <text x="80" y="92" fill="#FFB86B" font-size="16" letter-spacing="3">YOUR CAREER. YOUR COCKPIT.</text>
+  <text x="80" y="170" fill="#F5F0FF" font-size="76" font-weight="700"><tspan fill="#C9B6FF">➤</tspan> JobPilot</text>
+  <text x="80" y="222" fill="#BBAEDB" font-size="24">One flight across LinkedIn, Indeed, Glassdoor and more,</text>
+  <text x="80" y="254" fill="#BBAEDB" font-size="24">straight to your dream job.</text>
+  <rect x="80" y="278" width="130" height="40" rx="20" fill="#C9B6FF"/>
+  <text x="145" y="304" fill="#3B2A5C" font-size="17" font-weight="700" text-anchor="middle">Find jobs</text>
+  <rect x="222" y="278" width="200" height="40" rx="20" fill="#3B2A5C" stroke="#6B54A3"/>
+  <text x="322" y="304" fill="#F5F0FF" font-size="17" text-anchor="middle">Track applications</text>
+  <rect x="434" y="278" width="210" height="40" rx="20" fill="#3B2A5C" stroke="#6B54A3"/>
+  <text x="539" y="304" fill="#F5F0FF" font-size="17" text-anchor="middle">Pay in your currency</text>
+  <path d="M760 250 C840 250 880 120 960 130 S1060 210 1120 200 S1170 140 1180 110" fill="none" stroke="#BBAEDB" stroke-width="3" stroke-dasharray="10 10"/>
+  <text x="1170" y="110" fill="#FFB86B" font-size="56" transform="rotate(-25 1190 95)">✈</text>
+</svg>
