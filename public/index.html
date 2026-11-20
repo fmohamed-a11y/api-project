@@ -5,17 +5,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JobPilot</title>
         <link rel="stylesheet" href="css/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Sora:wght@600;700&display=swap" rel="stylesheet">
 
         
     </head>
     <body>
         <header>
             <h1>JobPilot</h1>
+            <svg class="trail" viewBox="0 0 220 80" aria-hidden="true"><path d="M0 70 C40 70 60 10 100 15 S150 55 180 50 S210 25 220 10"/></svg>
+            <span class="plane" aria-hidden="true">✈</span>
             <p><i>One flight across LinkedIn, Indeed, Glassdoor and more, straight to your dream job. </i></p>
 
             <nav>
                 <a href="#search" class="nav-link" data-page="search">🔍Find jobs </a>
-                <a href="#applications" class="nav-link" data-page="applications">📋My application</a>
+                <a href="#applications" class="nav-link" data-page="applications">📋My applications</a>
                 <a href="#about" class="nav-link" data-page="about">ℹ️ About</a>
 
             </nav>
@@ -24,6 +27,8 @@
         <main>
 
             <section id="search" class="page">
+                <p class="eyebrow">Pre-flight check: your future</p>
+                <h2>Your next chapter, ready for takeoff.</h2>
                 <form id="search-form">
                     <label for="search-input">Job title or keyword</label>
                     <input id="search-input" type="text" placeholder="e.g. software engineer">
@@ -82,9 +87,11 @@
                 </select>
                 <ul id="job-list"></ul>
             </section>
-
-            <section id="applications" class="page">
-                <h2>My applications</h2>
+<section id="applications" class="page">
+                <img class="sticker" src="images/pilot-cat.png" alt="">
+                <p class="eyebrow">Your personal flight log</p>
+                <h2>Your journey so far</h2>
+                <p>From first save to final offer.</p>
                 <label for="status-filter">Show</label>
                 <select id="status-filter">
                     <option value="All">All</option>
@@ -96,10 +103,9 @@
                 </select>
                 <ul id="tracker-list"></ul>
             </section>
-
-            <section id="about" class="page">
-                <h2> About JobPilot</h2>
-                <p>“JobPilot searches jobs from LinkedIn, Indeed, Glassdoor and other sites in one place, shows salaries in your own currency, and helps you keep track of every application</p>
+<section id="about" class="page">
+             <img class="sticker" src="images/pilot-girl.png" alt="">
+                <p>JobPilot searches jobs from LinkedIn, Indeed, Glassdoor and other sites in one place, shows salaries in your own currency, and helps you keep track of every application.</p>
 
                 <h3>Credits</h3>
                 <ul>
