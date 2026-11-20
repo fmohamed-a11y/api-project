@@ -1,102 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JobPilot</title>
+        <link rel="stylesheet" href="css/styles.css">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body>
+        <header>
+            <h1>JobPilot</h1>
+            <p><i>One flight across LinkedIn, Indeed, Glassdoor and more, straight to your dream job. </i></p>
 
-    <title>Job Search</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+            <nav>
+                <a href="#search" class="nav-link" data-page="search">🔍Find jobs </a>
+                <a href="#applications" class="nav-link" data-page="applications">📋My application</a>
+                <a href="#about" class="nav-link" data-page="about">ℹ️ About</a>
 
-<body>
-    <header>
-        <h1>JobPilot </h1>
-        <p><i>One flight across LinkedIn, Indeed, Glassdoor and more, straight to your dream job.</i></p>
-    </header>
-    <main>
+            </nav>
+        </header>
 
-        <form id="search-form">
-            <label for="search-input">Job title or keyword</label>
-            <input id="search-input" type="text" placeholder="e.g. software engineer">
-            
-            <select id = "country">
-                <option value ="us">United States</option>
-                <option value="gb">United Kingdom</option>
-                <option value="rw">Rwanda</option>
-                <option value="ke">Kenya</option>
-                <option value="ng">Nigeria</option>
-                <option value="za">South Africa</option>
-            </select>
+        <main>
 
-            <select id="date-posted">
-                <option value="all">Any time</option>
-                <option value="today">Today</option>
-                <option value="3days">Last 3 days</option>
-                <option value="week">This week</option>
-                <option value="month">This month</option>
-            </select>
-        <label><input type="checkbox" id="remote"> Remote only</label>
+            <section id="search" class="page">
+                <form id="search-form">
+                    <label for="search-input">Job title or keyword</label>
+                    <input id="search-input" type="text" placeholder="e.g. software engineer">
 
-            
-
-            <fieldset>
-                <legend>Job type</legend>
-                <label><input type="checkbox" name="types" value="FULLTIME">Full-Time</label>
-                <label><input type="checkbox" name="types" value="PARTTIME">Part-time</label>
-                <label><input type="checkbox" name="types" value="CONTRACTOR"> Contract</label>
-                <label><input type="checkbox" name="types" value="INTERN">Internship</label>
-            </fieldset>
-            <button type="submit">Search</button>
-
-        </form>
-        <p id="status"></p>
-        <label for="sort">Sort by</label>
-        <select id="sort">
-            <option value="relevance">Best match</option>
-            <option value="newest">Newest first</option>
-            <option value="salary">Highest salary</option>
-            <option value="company">Company A-Z</option>
-        </select>
-<label for ="currency">Show salary in</label>
-<select id="currency">
-    <option value="USD">US dollar (USD)</option>
-    <option value="RWF">Rwandan franc (RWF)</option>
-    <option value="KES">Kenyan shilling(KES)</option>
-    <option value="NGN">Nigerian naira (NGN)</option>
-    <option value="ZAR">South African rand (ZAR)</option>
-    <option value="GBP">British pound (GBP)</option>
-    <option value="EUR">Euro (EUR)</option>
-</select>
+                    <select id="country">
+                        <option value="us">United States</option>
+                        <option value="gb">United Kingdom</option>
+                        <option value="rw">Rwanda</option>
+                        <option value="ke">Kenya</option>
+                        <option value="sd">Sudan </option>
+                        <option value="et">Ethiopia </option>
+                        <option value="ng">Nigeria</option>
+                        <option value="za">South Africa</option>
 
 
+                    </select>
+                    <select id="date-posted">
+                        <option value="all">Any time</option>
+                        <option value="today">Today</option>
+                        <option value="3days">Last 3 days</option>
+                        <option value="week">This week</option>
+                        <option value="month">This month</option>
+                    </select>
+                    <label><input type="checkbox" id="remote">Remote only</label>
+                    <fieldset>
+                        <legend>Job type</legend>
+                        <label><input type="checkbox" name="types" value="FULLTIME">Full-time</label>
+                        <label> <input type="checkbox" name="types" value="PARTTIME">Part-time</label>
+                        <label><input type="checkbox" name="types" value="CONTRACTOR">Contract</label>
+                        <label><input type="checkbox" name="types" value="INTERN">Internship</label>
+                    </fieldset>
+                    <button type="submit">Search</button>
 
-        <ul id="job-list"></ul>
+                </form>
+                <p id="status"></p>
+                <label for="sort">Sort by</label>
+                <select id="sort">
+                    <option value="relevance">Best match</option>
+                    <option value="newest">Newest first</option>
+                    <option value="salary">Highest salary</option>
+                    <option value="company">Company A-Z</option>
+                </select>
 
+                <label for="currency">Show salary in</label>
+                <select id="currency">
+                    <option value="USD">US dollar (USD)</option>
+                    <option value="RWF">Rwandan franc (RWF)</option>
+                    <option value="KES">Kenyan shilling(KES)</option>
+                    <option value="NGN">Nigerian naira (NGN)</option>
+                    <option value="SDG">Sudanese pound(SDG)</option>
+                    <option value="ZAR">South African rand(ZAR)</option>
+                    <option value="GBP">British pound (GBP)</option>
+                    <option value="EUR">Euro(EUR)</option>
+                    <option value="ETB">Ethiopian birr(ETB)</option>
 
-<section id="tracker">
+                </select>
+                <ul id="job-list"></ul>
+            </section>
 
-    <h2>My applications</h2>
-    <label for="status-filter">Show</label>
-    <select id="status-filter">
-        <option value="All">ALL</option>
-        <option value="Saved">Saved</option>
-        <option value="Applied">Applied</option>
-        <option value="Interview">Interview</option>
-        <option value="Offer">Offer</option>
-        <option value="Rejected">Rejected</option>
+            <section id="applications" class="page">
+                <h2>My applications</h2>
+                <label for="status-filter">Show</label>
+                <select id="status-filter">
+                    <option value="All">All</option>
+                    <option value="Saved">Saved</option>
+                    <option value="Applied">Applied</option>
+                    <option value="Interview">Interview</option>
+                    <option value="Offer">Offer</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+                <ul id="tracker-list"></ul>
+            </section>
 
-    </select>
-    <ul id="tracker-list"></ul>
-</section>
+            <section id="about" class="page">
+                <h2> About JobPilot</h2>
+                <p>“JobPilot searches jobs from LinkedIn, Indeed, Glassdoor and other sites in one place, shows salaries in your own currency, and helps you keep track of every application</p>
 
-    </main>
-    <footer>
-        <P><a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer" >Rates by Exchange Rate API </a></P>
-        <p>Job data from the JSearch API by OpenWeb Ninja on RapidAPI.</p>
-    </footer>
-
-    <script src="js/app.js"></script>
-</body>
-
+                <h3>Credits</h3>
+                <ul>
+                <li>Job data: <a href="https://rapidapi.com/letscrape-6bRBa3QguO5/api/jsearch" target="_blank" rel="noopener noreferrer">JSearch API</a> by OpenWeb Ninja on RapidAPI</li>
+                <li>Currency rates: <a href ="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer">Rates by Exchange Rate API</a></li>
+                <li>Locations: Google Maps</li>
+                </ul>
+                <h3>Made by</h3>
+                <p>Fatima Samir </p>
+            </section>
+        </main>
+        <script src="js/app.js"></script>
+    </body>
 </html>

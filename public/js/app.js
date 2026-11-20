@@ -278,3 +278,20 @@ async function loadRates() {
     }
 
 loadRates();
+const PAGES = ['search', 'applications', 'about'];
+
+function showPage () {
+    const wanted = location.hash.slice(1);
+    const page = PAGES.includes(wanted) ? wanted : 'search' ;
+
+    document.querySelectorAll('.page').forEach((section) =>{
+        section.hidden = section.id !== page;
+
+    }); document.querySelectorAll('.nav-link').forEach((link) => {
+        link.classList.toggle('active', link.dataset.page == page);
+
+    });
+    window.scrollTo(0, 0);
+}
+window.addEventListener('hashchange', showPage);
+showPage();
