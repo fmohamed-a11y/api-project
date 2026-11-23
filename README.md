@@ -7,7 +7,7 @@
 Job hunting means searching five websites, losing track of applications, and guessing what a salary in dollars means at home. **JobPilot** searches **LinkedIn, Indeed, Glassdoor and more** at once, shows pay **in your own currency**, and tracks every job you apply for.
 
 - 🌐 **Live app:**  http://18.135.15.23/
-- 🎬 **Demo video:** `<VIDEO_LINK>` 
+- 🎬 **Demo video:** https://youtu.be/RDO04eom7oo 
 - 👩🏽‍✈️ **Made by:** Fatima Samir
 
 ---
